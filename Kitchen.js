@@ -36,9 +36,19 @@ class Kitchen {
 
     }
 
+    sugedesProduktas(item) {
+        let updatedList = [];
+        for (const product of this.list) {
+            if (product.item !== item) {
+                updatedList.push(product)
+
+            }
+            this.list = updatedList;
+        }
 
 
 
+    }
 
 
 
