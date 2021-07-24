@@ -1,6 +1,7 @@
 class Kitchen {
     constructor() {
         this.list = [];
+
     }
 
     intro() {
@@ -19,30 +20,29 @@ class Kitchen {
 
         for (let i = 0; i < this.list.length; i++) {
             const product = this.list[i];
-            let itemName = product.item;
-            // var capitalizedList = (`${i + 1 + `)`} ${product.itemName[0].toUpperCase() + product.itemName.slice(1)}: ${product.units}`);
-            var capitalizedList = (`${i + 1 + `)`} ${itemName[0].toUpperCase() + itemName.slice(1)}: ${product.units}`);
+            let productName = product.item;
+            var capitalizedList = (`${i + 1 + `)`} ${productName[0].toUpperCase() + productName.slice(1)}: ${product.units}`);
 
             console.log(capitalizedList);
         }
     }
-    // sunaudota(itemName, usedUnits) {
-    //     for (let i = 0; i < this.list.length; i++) {
-    //         const product = this.list[i];
-    //         console.log(itemName, product);
+    sunaudota(item, units) {
 
-    //         if (itemName === product.item) {
-    //             product.units -= usedUnits;
-    //             break;
-    //         }
-    //     }
+        for (const product of this.list) {
+            if (product.item === item) {
+                product.units -= units;
+            }
+        }
+
+    }
+
+
+
+
+
 
 
 
 }
-
-
-
-
 
 module.exports = Kitchen;
